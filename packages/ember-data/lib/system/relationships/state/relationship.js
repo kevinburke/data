@@ -150,7 +150,7 @@ Relationship.prototype = {
   },
 
   removeRecordFromOwn: function(record) {
-    this.members.remove(record);
+    this.members.delete(record);
     this.notifyRecordRelationshipRemoved(record);
     this.record.updateRecordArrays();
   },
@@ -164,7 +164,7 @@ Relationship.prototype = {
   },
 
   serverRemoveRecordFromOwn: function(record) {
-    this.serverMembers.remove(record);
+    this.serverMembers.delete(record);
     this.syncServerLater();
   },
 
