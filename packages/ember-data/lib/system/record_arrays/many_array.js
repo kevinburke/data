@@ -66,7 +66,7 @@ export default Ember.Object.extend(Ember.MutableArray, {
   syncServer: function() {
     //TODO make this smarter, currently its plenty stupid
     this.arrayContentWillChange(0, this.length, this.length);
-    this.length = this.serverState.length;
+    this.set('length', this.serverState.length);
     this.currentState = this.serverState.slice(0);
     this.arrayContentDidChange(0, this.length, this.length);
     //TODO Figure out to notify only on additions and maybe only if unloaded
